@@ -411,8 +411,8 @@
   filter: grayscale(95%);
 }
 
-.filter-contrast {
-  filter: contrast(40%);
+.filter-contrast-sepia {
+  filter: contrast(40%) sepia(80%);
 }
 
 .filter-brightness {
