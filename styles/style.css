@@ -17,6 +17,7 @@
 .page {
   max-inline-size: 700px;
   font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0;
   color: var(--font-color);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -28,7 +29,6 @@
 @supports (font-variation-settings: normal) {
   .page {
       font-family: 'Inter-Variable', sans-serif;
-      font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0;
   }
 } 
 
