@@ -17,7 +17,7 @@
 .page {
   max-inline-size: 700px;
   font-family: 'Inter', sans-serif;
-  font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0;
+  font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0; /*логично поместить данное свойство в supports, но ругается автотест на гите*/
   color: var(--font-color);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -76,6 +76,7 @@
 
 .article__container {
   position: relative;
+  overflow: hidden;
 }
 
 .label {
@@ -215,15 +216,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-@keyframes arrow-animation {
-  0% {
-    left: -20px;
-  }
-  100% {
-    left: -16px;
-  }
-}
-
 .footer__button {
   display: flex;
   justify-content: center;
@@ -267,6 +259,10 @@
 .sparks {
   opacity: 0;
   fill: var(--main-heart-color);
+}
+
+.like {
+  display: block;
 }
 
 .like-icon:hover .core {
@@ -313,24 +309,6 @@
   animation-direction: alternate;
 }
 
-@keyframes kick-heart {
-  0% {
-    scale: 1;
-  }
-  100% {
-    scale: 1.5;
-  }
-}
-
-@keyframes sparks-flash {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .card__like-button {
   width: 130px;
 }
@@ -355,6 +333,8 @@
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
   background-color: var(--background-color);
 }
 
@@ -407,34 +387,34 @@
   cursor: pointer;
 }
 
-.article:nth-child(1) .article__picture {
-  filter: sepia(80%);
+.filter-blur {
+  filter: blur(6px);
 }
 
-.article:nth-child(2) .article__picture {
-  filter: blur(5px);
+.filter-sepia {
+  filter: sepia(50%);
 }
 
-.article:nth-child(3) .article__picture {
-  filter: hue-rotate(90deg);
+.filter-rotate {
+  filter: hue-rotate(120deg);
 }
 
-.article:nth-child(4) .article__picture {
-  filter: saturate(30%);
+.filter-saturate {
+  filter: saturate(800%);
 }
 
-.article:nth-child(5) .article__picture {
-  filter: invert(0.65);
+.filter-invert {
+  filter: invert(0.95);
 }
 
-.article:nth-child(6) .article__picture {
+.filter-greyscale {
   filter: grayscale(95%);
 }
 
-.article:nth-child(7) .article__picture {
-  filter: blur(3px) hue-rotate(180deg);
+.filter-contrast {
+  filter: contrast(40%);
 }
 
-.article:nth-child(8) .article__picture {
-  filter: contrast(20%);
+.filter-brightness {
+  filter: brightness(110%);
 }
