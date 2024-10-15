@@ -1,1 +1,22 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-header-size: clamp(0px, 0.0498 * 100vw + 30.308px, 65px);
+  --font-header-description-size: clamp(14px, 0.028 * 100vw + 3.486px, 23px);
+  --header-title-padding: min(calc(0.0498 * 100vw + 101.31px), 136px);
+  --left-position-label: clamp(13px, 0.0369 * 100vw - 0.8462px, 25px);
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  
+  --background-grid-color: #d3d3d3;
+  --background-gradient-start: #E7E7E7;
+  --background-gradient-end: #1A1A1A;
+  /*--padding: calc(25 / 959 * 100vw);*/
+  --background-color: #FFF;
+  --border-color: #000;
+  --font-color: #000;
+  --contour-color: #000;
+  --main-heart-color: red;
+  --background-dseudo-color: #FFF;
+  --label-font-color: #000;
+  --label-stroke-color: #fff;
+}
