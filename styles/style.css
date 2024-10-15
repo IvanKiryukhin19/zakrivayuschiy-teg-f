@@ -28,6 +28,7 @@
 @supports (font-variation-settings: normal) {
   .page {
       font-family: 'Inter-Variable', sans-serif;
+      font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0;
   }
 } 
 
@@ -87,12 +88,14 @@
   opacity: 50%;
   mix-blend-mode: hard-light;
   z-index: 1;
+  text-shadow: -1px 0 var(--label-stroke-color), 0 1px var(--label-stroke-color), 1px 0 var(--label-stroke-color), 0 -1px var(--label-stroke-color);
 }
 
-@supports(-webkit-text-stroke: 1px var(--label-stroke-color)) {
+@supports((text-stroke: 1px var(--label-stroke-color)) or (-webkit-text-stroke: 1px var(--label-stroke-color))) {
   .label {
       -webkit-text-stroke: 1px var(--label-stroke-color);
-      text-shadow: -1px 0 var(--label-stroke-color), 0 1px var(--label-stroke-color), 1px 0 var(--label-stroke-color), 0 -1px var(--label-stroke-color);
+      text-stroke: 1px var(--label-stroke-color);
+      text-shadow: none;
   }
 } 
 
@@ -143,7 +146,7 @@
   font-size: 14px;
   font-family: 'Press Start 2P', sans-serif;
   padding: 10.5px 0;
-  
+  line-height: 21px;
 }
 
 .footer__button .button__text {
