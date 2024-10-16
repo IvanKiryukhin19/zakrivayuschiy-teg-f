@@ -38,7 +38,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root.theme-dark {
+  :root {
     --background-grid-color: #000;
     --background-gradient-start: #007F0C;
     --background-gradient-end: #004306;

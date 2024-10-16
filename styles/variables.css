@@ -6,11 +6,11 @@
   --left-position-label: clamp(13px, 0.0369 * 100vw - 0.8462px, 25px);
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+  --dialog-width-text-zone: 234px;
   
   --background-grid-color: #d3d3d3;
   --background-gradient-start: #E7E7E7;
   --background-gradient-end: #1A1A1A;
-  /*--padding: calc(25 / 959 * 100vw);*/
   --background-color: #FFF;
   --border-color: #000;
   --font-color: #000;
