@@ -17,7 +17,7 @@
 .page {
   max-inline-size: 700px;
   font-family: 'Inter-Variable', sans-serif;
-  font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0; /*логично поместить данное свойство в supports, но ругается автотест на гите*/
+  font-variation-settings: 'wght' var(--font-weight-normal), 'wdth' 0, 'opsz' 0;
   color: var(--font-color);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -284,6 +284,15 @@
   width: 130px;
 }
 
+.button {
+  position: relative;
+  box-shadow: var(--border-color) 0 0 0 0;
+  transition: box-shadow 0.5s ease-in-out;
+  background-color: var(--background-color);
+  border: solid var(--border-color) 2px;
+  cursor: pointer;
+}
+
 .button::before {
   content: '';
   position: absolute;
@@ -295,6 +304,7 @@
   transform: scaleX(0);
   transform-origin: 0 0;
   mix-blend-mode: difference;
+  transition: transform 0.5s ease-in-out;
 }
 
 .button:hover::before {
@@ -312,16 +322,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--border-color);
-  transition: border 0.3s ease
-}
-
-.button {
-  position: relative;
-  box-shadow: var(--border-color) 0 0 0 0;
-  transition: box-shadow 0.5s ease-in-out;
-  background-color: var(--background-color);
-  border: solid var(--border-color) 2px;
-  cursor: pointer;
 }
 
 .button:focus-visible {
@@ -329,6 +329,7 @@
 }
 
 .dialog[open] {
+  max-width: calc(100% - 16px);
   padding: 30px;
   display: grid;
   grid-template-columns: 39px var(--dialog-width-text-zone);
@@ -337,6 +338,7 @@
   align-items: center;
   background-color: var(--background-color);
   color: var(--font-color);
+  border: solid var(--border-color) 2px;
   line-height: 1.3125rem;
   overflow-wrap: anywhere;
 }
@@ -344,7 +346,7 @@
 .dialog .floppy__logo {
   inline-size: 39px;
   block-size: 39px;
-  margin: 0 8px 0 0;
+  margin: 0;
 }
 
 .dialog .button__text {
@@ -353,10 +355,12 @@
 }
 
 .dialog__text {
+  display: inline-block;
   font-size: 14px;
   font-family: 'Press Start 2P', fantasy;
   padding: 0;
   line-height: 1.3125rem;
+  text-transform: uppercase;
 }
 
 .dialog::backdrop {
@@ -419,8 +423,7 @@
 
   .dialog[open] {
     padding: 30px 42px;
-    position: absolute;
-    --dialog-width-text-zone: min(min-content, 198px);
+    --dialog-width-text-zone: minmax(140px, 198px);
   }
 }
 
